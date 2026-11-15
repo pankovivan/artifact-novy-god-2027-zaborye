@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="houseTitle houseDesc">
+  <title id="houseTitle">Заснеженный дом в деревне</title>
+  <desc id="houseDesc">Деревенский дом с тёплым светом в окнах, снежной крышей, забором и снеговиком.</desc>
+
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#071226"/>
+      <stop offset=".62" stop-color="#0d2740"/>
+      <stop offset="1" stop-color="#17445c"/>
+    </linearGradient>
+    <radialGradient id="moonGlow">
+      <stop offset="0" stop-color="#fff4d6" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#fff4d6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="snow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f0f6ff"/>
+      <stop offset=".55" stop-color="#dbe8f8"/>
+      <stop offset="1" stop-color="#bed2e9"/>
+    </linearGradient>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a2a22"/>
+      <stop offset="1" stop-color="#271c17"/>
+    </linearGradient>
+    <linearGradient id="window" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffe1a2"/>
+      <stop offset="1" stop-color="#ffb85f"/>
+    </linearGradient>
+    <filter id="glow" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="13"/>
+    </filter>
+    <filter id="soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+  </defs>
+
+  <rect width="640" height="480" fill="url(#sky)"/>
+
+  <g fill="#dfeaff">
+    <circle cx="54" cy="52" r="1.2" opacity=".7"/>
+    <circle cx="118" cy="94" r=".9" opacity=".5"/>
+    <circle cx="186" cy="38" r="1.4" opacity=".8"/>
+    <circle cx="250" cy="76" r=".8" opacity=".5"/>
+    <circle cx="322" cy="44" r="1.1" opacity=".65"/>
+    <circle cx="386" cy="98" r=".9" opacity=".5"/>
+    <circle cx="448" cy="54" r="1.2" opacity=".75"/>
+    <circle cx="510" cy="34" r=".8" opacity=".5"/>
+    <circle cx="584" cy="76" r="1" opacity=".6"/>
+    <circle cx="72" cy="150" r=".8" opacity=".4"/>
+    <circle cx="212" cy="132" r=".9" opacity=".45"/>
+    <circle cx="348" cy="150" r=".8" opacity=".4"/>
+    <circle cx="470" cy="128" r=".9" opacity=".45"/>
+    <circle cx="602" cy="144" r=".8" opacity=".4"/>
+  </g>
+
+  <circle cx="520" cy="82" r="86" fill="url(#moonGlow)"/>
+  <circle cx="520" cy="82" r="28" fill="#f7f0d8"/>
+  <g fill="#b9b09a" opacity=".15">
+    <circle cx="512" cy="75" r="5"/>
+    <circle cx="528" cy="90" r="3.4"/>
+  </g>
+
+  <path d="M0 330 34 306 62 326 102 292 140 322 178 300 214 326 258 302 296 328 338 306 380 330 424 304 466 328 516 300 560 326 604 306 640 326V480H0Z" fill="#0b1a2c"/>
+  <path d="M0 352C110 338 210 358 330 350S540 336 640 352V480H0Z" fill="url(#snow)"/>
+
+  <g opacity=".9">
+    <rect x="545" y="300" width="9" height="58" fill="#221814"/>
+    <path d="M550 172 592 252H508Z" fill="#123249"/>
+    <path d="M550 208 604 300H496Z" fill="#153a53"/>
+    <path d="M550 248 618 352H482Z" fill="#123249"/>
+    <path d="M550 172 592 252H573L550 211 527 252H508Z" fill="#dbe8f8" opacity=".82"/>
+    <path d="M550 248 618 352H589L550 291 511 352H482Z" fill="#dbe8f8" opacity=".28"/>
+  </g>
+
+  <g>
+    <path d="M420 126c-16-26 18-40 2-68" fill="none" stroke="#bcd2e8" stroke-width="9" opacity=".16" filter="url(#soft)"/>
+    <rect x="405" y="128" width="26" height="104" fill="#2b1e18"/>
+    <path d="M405 144h26M405 164h26M405 184h26" stroke="#1d1310" stroke-width="2" opacity=".6"/>
+    <rect x="399" y="121" width="38" height="11" rx="5" fill="#eef5ff"/>
+
+    <rect x="185" y="235" width="280" height="115" fill="url(#wall)"/>
+    <g stroke="#1e1511" stroke-width="2" opacity=".5">
+      <path d="M185 257h280M185 278h280M185 299h280M185 320h280M185 341h280"/>
+    </g>
+
+    <polygon points="185,235 325,140 465,235" fill="#2c201a"/>
+    <g stroke="#201612" stroke-width="2" opacity=".45">
+      <path d="M325 145v90M295 158v77M265 176v64M235 196v49M205 216v29"/>
+      <path d="M355 158v77M385 176v64M415 196v49M445 216v29"/>
+    </g>
+
+    <g filter="url(#glow)" opacity=".4">
+      <ellipse cx="245" cy="298" rx="48" ry="42" fill="#ffc873"/>
+      <ellipse cx="405" cy="298" rx="48" ry="42" fill="#ffc873"/>
+    </g>
+
+    <g>
+      <rect x="212" y="268" width="66" height="60" rx="3" fill="url(#window)" stroke="#2a1c17" stroke-width="5"/>
+      <rect x="372" y="268" width="66" height="60" rx="3" fill="url(#window)" stroke="#2a1c17" stroke-width="5"/>
+      <path d="M245 270v56M214 298h62M405 270v56M374 298h62" stroke="#2a1c17" stroke-width="3"/>
+      <rect x="207" y="326" width="76" height="7" rx="3.5" fill="#eef5ff"/>
+      <rect x="367" y="326" width="76" height="7" rx="3.5" fill="#eef5ff"/>
+    </g>
+
+    <polygon points="150,248 325,116 500,248" fill="#e8f2ff"/>
+    <polygon points="325,116 500,248 466,248 325,143" fill="#cddff0" opacity=".65"/>
+    <path d="M150 248 325 116 500 248" fill="none" stroke="#b9cee4" stroke-width="3" opacity=".5"/>
+
+    <polygon points="282,270 325,246 368,270" fill="#3a2a22"/>
+    <path d="M282 270 325 246 368 270" fill="none" stroke="#eef5ff" stroke-width="7" stroke-linecap="round"/>
+
+    <rect x="299" y="280" width="52" height="70" rx="3" fill="#1d1512" stroke="#3a2a22" stroke-width="4"/>
+    <circle cx="326" cy="305" r="13" fill="none" stroke="#4d6b45" stroke-width="5"/>
+    <circle cx="326" cy="292" r="2.4" fill="#e2725f"/>
+    <circle cx="318" cy="299" r="2.2" fill="#e2725f"/>
+    <circle cx="334" cy="299" r="2.2" fill="#e2725f"/>
+    <circle cx="343" cy="322" r="3" fill="#f6c97a"/>
+
+    <rect x="286" y="350" width="78" height="9" rx="3" fill="#4a372b"/>
+    <rect x="276" y="359" width="98" height="9" rx="3" fill="#3b2c23"/>
+    <rect x="282" y="347" width="86" height="5" rx="2.5" fill="#eef5ff"/>
+  </g>
+
+  <g>
+    <g stroke="#2a1f19" stroke-width="7" stroke-linecap="round">
+      <path d="M20 322h126M20 342h126"/>
+    </g>
+    <g fill="#2f231c">
+      <rect x="22" y="304" width="9" height="60" rx="2"/>
+      <rect x="62" y="304" width="9" height="60" rx="2"/>
+      <rect x="102" y="304" width="9" height="60" rx="2"/>
+      <rect x="140" y="304" width="9" height="60" rx="2"/>
+    </g>
+    <g fill="#eef5ff">
+      <rect x="18" y="300" width="17" height="7" rx="3.5"/>
+      <rect x="58" y="300" width="17" height="7" rx="3.5"/>
+      <rect x="98" y="300" width="17" height="7" rx="3.5"/>
+      <rect x="136" y="300" width="17" height="7" rx="3.5"/>
+    </g>
+  </g>
+
+  <g opacity=".85">
+    <rect x="43" y="246" width="7" height="44" fill="#221814"/>
+    <path d="M46 298 30 342H62Z" fill="#123249"/>
+    <path d="M46 272 24 322H68Z" fill="#153a53"/>
+    <path d="M46 246 66 298H26Z" fill="#153a53"/>
+  </g>
+
+  <path d="M305 360C300 400 252 438 232 480H428C404 438 352 400 346 360Z" fill="#d7e6f6" opacity=".75"/>
+  <path d="M0 420C120 398 240 430 360 418S560 400 640 418V480H0Z" fill="#eaf3ff"/>
+  <path d="M0 449C140 432 260 460 400 450S570 438 640 452V480H0Z" fill="#d3e2f3"/>
+
+  <g>
+    <ellipse cx="120" cy="452" rx="34" ry="6" fill="#b9cee4" opacity=".6"/>
+    <circle cx="120" cy="433" r="21" fill="#f7fbff"/>
+    <circle cx="120" cy="407" r="15" fill="#f2f8ff"/>
+    <circle cx="120" cy="386" r="10.5" fill="#f7fbff"/>
+    <circle cx="116" cy="384" r="1.4" fill="#22324a"/>
+    <circle cx="124" cy="384" r="1.4" fill="#22324a"/>
+    <polygon points="120,387 131,390 120,392" fill="#e2725f"/>
+    <path d="M110 396c6 4 14 4 20 0" stroke="#e2725f" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M104 402c-6 4-10 10-11 16M136 402c6 4 10 10 11 16" stroke="#6b4a33" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <rect x="109" y="369" width="22" height="5" rx="2.5" fill="#31465f"/>
+    <rect x="113" y="355" width="14" height="16" rx="2" fill="#31465f"/>
+  </g>
+
+  <g fill="#a9c0da" opacity=".55">
+    <ellipse cx="300" cy="396" rx="4" ry="2"/>
+    <ellipse cx="318" cy="410" rx="4" ry="2"/>
+    <ellipse cx="288" cy="424" rx="4" ry="2"/>
+    <ellipse cx="306" cy="440" rx="4" ry="2"/>
+  </g>
+</svg>

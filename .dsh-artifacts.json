@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "artifacts": {
+    "novy-god-2027-zaborye": {
+      "id": "novy-god-2027-zaborye",
+      "title": "Новый год 2027 · Заборье",
+      "kind": "html",
+      "createdAt": "2026-11-15T16:53:49.163Z",
+      "updatedAt": "2026-11-15T16:53:49.163Z",
+      "rev": 1,
+      "files": [
+        "assets/css/style.css",
+        "assets/img/banya.svg",
+        "assets/img/favicon.svg",
+        "assets/img/house.svg",
+        "assets/img/snowmobile.svg",
+        "assets/img/tubing.svg",
+        "assets/js/main.js",
+        "index.html"
+      ],
+      "description": "Сайт-приглашение на Новый год 2027 в деревне Заборье: программа, меню, участники и сборы."
+    }
+  },
+  "tombstones": []
+}
