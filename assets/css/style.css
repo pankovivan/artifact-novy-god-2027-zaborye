@@ -1920,12 +1920,6 @@ body.nav-open .nav-backdrop {
   color: #c9d6e5;
 }
 
-.santa-draw__btn {
-  justify-content: center;
-  width: 100%;
-  margin-bottom: 10px;
-}
-
 .santa-people {
   display: grid;
   grid-template-columns: 1fr 1fr;

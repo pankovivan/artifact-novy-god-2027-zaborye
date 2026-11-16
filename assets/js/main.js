@@ -452,83 +452,18 @@
     if (!root) return;
 
     const peopleBox = root.querySelector("[data-santa-people]");
-    const drawButton = root.querySelector("[data-santa-draw]");
     const result = root.querySelector("[data-santa-result]");
-    if (!peopleBox || !drawButton) return;
+    if (!peopleBox) return;
 
-    const names = ["Ваня", "Оксана", "Костя", "Ирина", "Денис", "Наташа"];
-    const storageKey = "zaborye-2027-santa";
-    let assignments = [];
-
-    const shuffle = (list) => {
-      const copy = list.slice();
-      for (let i = copy.length - 1; i > 0; i -= 1) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [copy[i], copy[j]] = [copy[j], copy[i]];
-      }
-      return copy;
-    };
-
-    const makeAssignments = () => {
-      let receivers = [];
-      for (let attempt = 0; attempt < 200; attempt += 1) {
-        const candidate = shuffle(names);
-        if (candidate.every((name, index) => name !== names[index])) {
-          receivers = candidate;
-          break;
-        }
-      }
-      if (!receivers.length) {
-        receivers = names.slice(1).concat(names[0]);
-      }
-      return names.map((giver, index) => ({ giver, receiver: receivers[index] }));
-    };
-
-    const isValid = (list) => {
-      if (!Array.isArray(list) || list.length !== names.length) return false;
-      if (!list.every((item) => item && typeof item.giver === "string" && typeof item.receiver === "string")) {
-        return false;
-      }
-      const givers = new Set(list.map((item) => item.giver));
-      const receivers = new Set(list.map((item) => item.receiver));
-      return (
-        names.every((name) => givers.has(name)) &&
-        names.every((name) => receivers.has(name)) &&
-        list.every((item) => item.giver !== item.receiver)
-      );
-    };
-
-    const read = () => {
-      try {
-        const parsed = JSON.parse(window.localStorage.getItem(storageKey) || "[]");
-        return isValid(parsed) ? parsed : [];
-      } catch (error) {
-        return [];
-      }
-    };
-
-    const save = () => {
-      try {
-        window.localStorage.setItem(storageKey, JSON.stringify(assignments));
-      } catch (error) {
-        /* Приватный режим — не сохраняем, но жеребьёвка работает. */
-      }
-    };
-
-    const renderPeople = () => {
-      peopleBox.textContent = "";
-      assignments.forEach((item) => {
-        const button = document.createElement("button");
-        button.type = "button";
-        button.className = "santa-person";
-        button.dataset.giver = item.giver;
-        button.textContent = item.giver;
-        button.setAttribute("aria-pressed", "false");
-        button.setAttribute("aria-label", `Показать, кому дарит ${item.giver}`);
-        peopleBox.appendChild(button);
-      });
-      drawButton.textContent = assignments.length ? "Перепровести" : "Провести жеребьёвку";
-    };
+    // Пары зафиксированы в самом сайте, чтобы на всех устройствах они были одинаковыми.
+    const assignments = [
+      { giver: "Ваня", receiver: "Костя" },
+      { giver: "Оксана", receiver: "Наташа" },
+      { giver: "Костя", receiver: "Денис" },
+      { giver: "Ирина", receiver: "Оксана" },
+      { giver: "Денис", receiver: "Ирина" },
+      { giver: "Наташа", receiver: "Ваня" },
+    ];
 
     const show = (giver) => {
       const item = assignments.find((entry) => entry.giver === giver);
@@ -541,30 +476,22 @@
       result.textContent = `${item.giver} дарит подарок → ${item.receiver}`;
     };
 
-    const stored = read();
-    if (stored.length) {
-      assignments = stored;
-      renderPeople();
-      if (result) result.textContent = "Жеребьёвка уже проведена. Нажмите на своё имя.";
-    } else {
-      renderPeople();
-    }
+    assignments.forEach((item) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "santa-person";
+      button.dataset.giver = item.giver;
+      button.textContent = item.giver;
+      button.setAttribute("aria-pressed", "false");
+      button.setAttribute("aria-label", `Показать, кому дарит ${item.giver}`);
+      peopleBox.appendChild(button);
+    });
 
     peopleBox.addEventListener("click", (event) => {
       if (!(event.target instanceof Element)) return;
       const button = event.target.closest(".santa-person");
       if (!button) return;
       show(button.dataset.giver);
-    });
-
-    drawButton.addEventListener("click", () => {
-      if (assignments.length && !window.confirm("Провести жеребьёвку заново? Текущие пары изменятся.")) {
-        return;
-      }
-      assignments = makeAssignments();
-      save();
-      renderPeople();
-      if (result) result.textContent = "Готово! Нажмите на своё имя, чтобы узнать, кому дарите.";
     });
   };
 
